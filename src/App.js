@@ -1,8 +1,12 @@
 import { Component } from 'react';
 
-import { CardList } from './components/card-list/card-list.component'
+import CardList from './components/card-list/card-list.component'
 
-import { SearchBox } from './components/search-box/search-box.component';
+import SearchBox from './components/search-box/search-box.component';
+
+import Scroll from './components/Scroll';
+
+import ErrorBoundry from './components/ErrorBoundry';
 
 import './App.css';
 
@@ -28,17 +32,24 @@ class App extends Component {
 
   render() {
     const { monsters, SearchField } = this.state;
-    const filteredMonsters = monsters.filter(monster =>
-      monster.name.toLowerCase().includes(SearchField.toLowerCase())
-    );
+    const filteredMonsters = monsters.filter(monster => {
+      return monster.name.toLowerCase().includes(SearchField.toLowerCase())
+    })
 
-    return (
-      <div className='App'>
-        <h1>RobotMonsters</h1>
-        <SearchBox onSearchChange={this.onSearchChange} />
-        <CardList monsters={filteredMonsters} />
-      </div>
-    );
+    return !monsters.length ?
+       <h1>Loading</h1> :
+        (
+          <div className='App'>
+           <h1>RobotMonsters</h1>
+            <SearchBox onSearchChange={this.onSearchChange} />
+            <Scroll>
+              <ErrorBoundry>
+                <CardList monsters={filteredMonsters} />
+              </ErrorBoundry>
+            </Scroll>
+          </div>
+        );
+    
   }
 }
 
