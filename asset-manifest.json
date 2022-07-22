@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/robot-monsters/static/css/main.97575c35.css",
-    "main.js": "/robot-monsters/static/js/main.ca6468d8.js",
+    "main.js": "/robot-monsters/static/js/main.32d7e8d0.js",
     "index.html": "/robot-monsters/index.html",
     "main.97575c35.css.map": "/robot-monsters/static/css/main.97575c35.css.map",
-    "main.ca6468d8.js.map": "/robot-monsters/static/js/main.ca6468d8.js.map"
+    "main.32d7e8d0.js.map": "/robot-monsters/static/js/main.32d7e8d0.js.map"
   },
   "entrypoints": [
     "static/css/main.97575c35.css",
-    "static/js/main.ca6468d8.js"
+    "static/js/main.32d7e8d0.js"
   ]
 }
